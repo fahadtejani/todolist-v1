@@ -8,11 +8,11 @@ app.set('view engine', 'ejs');
 
 app.get('/',(req,res)=>{
 
-  // res.send("Hello World");
   var today = new Date();
-  const week = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
+  var currentDay = today.getDay();
+  const daysInWeek = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  var day = daysInWeek[currentDay];
   res.render('list',{kindOfDay:day});
-  // res.send(`Today is ${week[today.getDay()]}`);
 
 });
 
